@@ -4,6 +4,7 @@ const errorHandler = require("./middleware/errorHandler");
 
 // Route imports
 const userRoutes = require("./routes/userRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
 
 // Error Handler Middleware
 app.use(errorHandler);
